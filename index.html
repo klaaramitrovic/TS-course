@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Workcademy shopping list</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div>
+            <h1>Shopping list</h1>
+            <div class="container">
+                <div id="adding-item">
+                    <form action="">
+                        <h2>Add new item</h2>
+                        <div class="item-row" id="item-name">
+                            <label for="name">Item name:</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+        
+                        <div class="item-row" id="select-box">
+                            <label for="dropdown">Item type:</label>
+                            <select name="dropdown" id="item-type">
+        
+                            </select>
+                        </div>
+
+                        <div class="item-row" id="item-price" >
+                            <label for="price">Item price:</label>
+                            <input type="text" name="price" id="price" required>
+                        </div>
+                        
+                        <p class="item-description">
+                            <label for="description">Item description:</label>
+                            <textarea id="description" name="description" rows="4" cols="50"></textarea>
+                        </p>
+            
+                        <button id="add-item">Add item</button>
+                    </form>
+                </div>
+                <div id="display-items">
+                    
+                </div>
+            </div>
+        </div> 
+        <script src="dist/index.js"></script>
+    </body>
+</html>
