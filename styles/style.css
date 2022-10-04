@@ -35,8 +35,19 @@
 
 }
 
+#add-item-heading {
+    margin-bottom: 2%;
+}
+
 #add-item {
-    margin-top: 2%;
+    background-color: darkgray;
+    border-color: dimgrey;
+    width: 100px;
+    height: 30px;
+}
+
+#add-item:hover {
+    background-color: rgb(145, 148, 150);
 }
 
 #adding-item {
@@ -61,3 +72,20 @@
     padding-right: 3%;
 }
 
+.button {
+    margin-top: 4%;
+    border-radius: 4px;
+    color: rgb(42, 40, 40);
+}
+
+.button-item {
+    width: 70%;
+    height: 20px;
+    background-color: rgb(211, 90, 90);
+    border-color: rgb(155, 68, 68);
+    color: black;
+}
+
+.button-item:hover {
+    background-color: rgb(226, 121, 121);
+}
