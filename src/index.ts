@@ -111,14 +111,7 @@ addButton?.addEventListener("click", function(event){
          //add button to item card
          var button = document.createElement('button');
          button.innerHTML = 'delete';
-         button.addEventListener('click', function(e) {
-            const target = e.target as HTMLButtonElement;
-            debugger;
-            items = items.filter(item => !(String(item.id) === target?.parentElement?.id));
-            const el = document.getElementById(`${target?.parentElement?.id}`)!;
-            var allItems = document.getElementById("display-items");
-            allItems?.removeChild(el);
-         });
+         button.addEventListener('click', deleteItem);
 
          element.appendChild(button);
 
@@ -141,15 +134,7 @@ addButton?.addEventListener("click", function(event){
         //add button to item card
         var button = document.createElement('button');
         button.innerHTML = 'delete';
-        button.addEventListener('click', function(e) {
-            const target = e.target as HTMLButtonElement;
-            debugger;
-            console.log(target?.parentElement?.id)
-            items = items.filter(item => !(String(item.id) === target?.parentElement?.id));
-            const el = document.getElementById(`${target?.parentElement?.id}`)!;
-            var allItems = document.getElementById("display-items");
-            allItems?.removeChild(el);
-         });
+        button.addEventListener('click', deleteItem);
 
         element.appendChild(button);
 
@@ -162,3 +147,12 @@ addButton?.addEventListener("click", function(event){
 
     console.log(items)
 })
+
+const deleteItem = (e: MouseEvent)=> {
+    const target = e.target as HTMLButtonElement;
+    debugger;
+    items = items.filter(item => !(String(item.id) === target?.parentElement?.id));
+    const el = document.getElementById(`${target?.parentElement?.id}`)!;
+    var allItems = document.getElementById("display-items");
+    allItems?.removeChild(el);
+ }
