@@ -110,9 +110,9 @@ addButton?.addEventListener("click", function(event){
 
          //add button to item card
          var button = document.createElement('button');
-         button.innerHTML = 'delete';
+         button.setAttribute("class", "button button-item");
+         button.innerHTML = 'Delete';
          button.addEventListener('click', deleteItem);
-
          element.appendChild(button);
 
         allItems?.appendChild(element);
@@ -134,6 +134,7 @@ addButton?.addEventListener("click", function(event){
         //add button to item card
         var button = document.createElement('button');
         button.innerHTML = 'delete';
+        button.setAttribute("class", "button button-item");
         button.addEventListener('click', deleteItem);
 
         element.appendChild(button);

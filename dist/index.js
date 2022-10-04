@@ -71,16 +71,9 @@ addButton === null || addButton === void 0 ? void 0 : addButton.addEventListener
          </ul>`;
         //add button to item card
         var button = document.createElement('button');
-        button.innerHTML = 'delete';
-        button.addEventListener('click', function (e) {
-            var _a;
-            const target = e.target;
-            debugger;
-            items = items.filter(item => { var _a; return !(String(item.id) === ((_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id)); });
-            const el = document.getElementById(`${(_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id}`);
-            var allItems = document.getElementById("display-items");
-            allItems === null || allItems === void 0 ? void 0 : allItems.removeChild(el);
-        });
+        button.setAttribute("class", "button button-item");
+        button.innerHTML = 'Delete';
+        button.addEventListener('click', deleteItem);
         element.appendChild(button);
         allItems === null || allItems === void 0 ? void 0 : allItems.appendChild(element);
     }
@@ -101,16 +94,8 @@ addButton === null || addButton === void 0 ? void 0 : addButton.addEventListener
         //add button to item card
         var button = document.createElement('button');
         button.innerHTML = 'delete';
-        button.addEventListener('click', function (e) {
-            var _a, _b;
-            const target = e.target;
-            debugger;
-            console.log((_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id);
-            items = items.filter(item => { var _a; return !(String(item.id) === ((_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id)); });
-            const el = document.getElementById(`${(_b = target === null || target === void 0 ? void 0 : target.parentElement) === null || _b === void 0 ? void 0 : _b.id}`);
-            var allItems = document.getElementById("display-items");
-            allItems === null || allItems === void 0 ? void 0 : allItems.removeChild(el);
-        });
+        button.setAttribute("class", "button button-item");
+        button.addEventListener('click', deleteItem);
         element.appendChild(button);
         allItems === null || allItems === void 0 ? void 0 : allItems.appendChild(element);
     }
@@ -119,3 +104,12 @@ addButton === null || addButton === void 0 ? void 0 : addButton.addEventListener
     description.value = "";
     console.log(items);
 });
+const deleteItem = (e) => {
+    var _a;
+    const target = e.target;
+    debugger;
+    items = items.filter(item => { var _a; return !(String(item.id) === ((_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id)); });
+    const el = document.getElementById(`${(_a = target === null || target === void 0 ? void 0 : target.parentElement) === null || _a === void 0 ? void 0 : _a.id}`);
+    var allItems = document.getElementById("display-items");
+    allItems === null || allItems === void 0 ? void 0 : allItems.removeChild(el);
+};
